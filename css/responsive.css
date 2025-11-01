@@ -495,8 +495,10 @@ body.no-scroll {
         height: clamp(240px, 90vw, 320px);
     }
     
-    /* Hide the government chart on mobile screens */
-    .government-chart {
+    /* Hide specific visualizations on mobile screens */
+    .demographics-chart,
+    .government-chart,
+    .sticky-viz {
         display: none;
     }
 
@@ -588,8 +590,10 @@ body.no-scroll {
         height: clamp(220px, 90vw, 280px);
     }
     
-    /* Hide the government chart on mobile screens */
-    .government-chart {
+    /* Hide specific visualizations on mobile screens */
+    .demographics-chart,
+    .government-chart,
+    .sticky-viz {
         display: none;
     }
 

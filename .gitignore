@@ -28,3 +28,9 @@ build/
 # Temporary files
 *.tmp
 .cache/
+
+# Project-specific files to exclude from GitHub
+QWEN.md
+GEMINI.md
+AGENTS.md
+_update_scrolly_functions.py
