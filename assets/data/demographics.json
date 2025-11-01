@@ -1,0 +1,84 @@
+{
+  "ethnicGroups": [
+    {
+      "name": "Persians",
+      "percentage": 61,
+      "population": 56120000,
+      "language": "Persian (Farsi)",
+      "languageFamily": "Indo-European",
+      "regions": ["Central", "South"],
+      "description": "The largest ethnic group, Persians form the cultural heartland of Iran."
+    },
+    {
+      "name": "Azeris",
+      "percentage": 16,
+      "population": 14720000,
+      "language": "Azerbaijani Turkish",
+      "languageFamily": "Turkic",
+      "regions": ["Northwest"],
+      "description": "Concentrated in the northwest, with strong cultural ties to Azerbaijan and Turkey."
+    },
+    {
+      "name": "Kurds",
+      "percentage": 10,
+      "population": 9200000,
+      "language": "Kurdish",
+      "languageFamily": "Indo-European",
+      "regions": ["West"],
+      "description": "Mountain communities known for vibrant culture and independence movements."
+    },
+    {
+      "name": "Lurs",
+      "percentage": 6,
+      "population": 5520000,
+      "language": "Luri",
+      "languageFamily": "Indo-European",
+      "regions": ["West-Central"],
+      "description": "Tribal people related to Persians with rich storytelling traditions."
+    },
+    {
+      "name": "Arabs",
+      "percentage": 2,
+      "population": 1840000,
+      "language": "Arabic",
+      "languageFamily": "Semitic",
+      "regions": ["Southwest"],
+      "description": "Coastal communities along the Persian Gulf with mixed cultural influences."
+    },
+    {
+      "name": "Baluchis",
+      "percentage": 2,
+      "population": 1840000,
+      "language": "Baluchi",
+      "languageFamily": "Indo-European",
+      "regions": ["Southeast"],
+      "description": "Connected culturally to Pakistan and Afghanistan, maintaining strong traditions."
+    },
+    {
+      "name": "Turkmen & Others",
+      "percentage": 3,
+      "population": 2760000,
+      "language": "Various",
+      "languageFamily": "Various",
+      "regions": ["Northeast", "Various"],
+      "description": "Including Turkmen, Gilaks, Mazandaranis, and other smaller groups."
+    }
+  ],
+  "totalPopulation": 92000000,
+  "officialLanguage": "Persian (Farsi)",
+  "recognizedLanguages": [
+    "Azerbaijani",
+    "Kurdish",
+    "Arabic",
+    "Baluchi",
+    "Turkmen",
+    "Gilaki",
+    "Mazandarani",
+    "Luri"
+  ],
+  "languageFamilies": {
+    "Indo-European": ["Persian", "Kurdish", "Luri", "Baluchi"],
+    "Turkic": ["Azerbaijani", "Turkmen"],
+    "Semitic": ["Arabic"]
+  }
+}

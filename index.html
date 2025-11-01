@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Iran beyond the headlines: from deserts to rainforests, Persians to Kurds, ancient traditions to modern lives.">
+    
+    <title>The World of Iran | An Interactive Journey</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The World of Iran">
+    <meta property="og:description" content="An interactive scrollytelling experience exploring Iran's diversity, culture, and complexity.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css?v=1.1">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div id="progress-bar" class="progress-bar"></div>
+    
+    <!-- Navigation (appears on scroll) -->
+    <nav id="main-nav" class="main-nav hidden">
+        <div class="nav-content">
+            <a href="#top" class="nav-logo">The World of Iran</a>
+            <ul class="nav-links">
+                <li><a href="#geography">Geography</a></li>
+                <li><a href="#regions">Regions</a></li>
+                <li><a href="#demographics">People</a></li>
+                <li><a href="#regime">Politics</a></li>
+                <li><a href="#culture">Culture</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-nav" class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#geography">Geography</a></li>
+            <li><a href="#regions">Regions</a></li>
+            <li><a href="#demographics">People</a></li>
+            <li><a href="#regime">Politics</a></li>
+            <li><a href="#culture">Culture</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Animated Background -->
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <canvas id="particles-canvas"></canvas>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-subtitle" data-animate="fade-up">
+                <span class="subtitle-line">Lyola Explores the World</span>
+            </div>
+            
+            <h1 class="hero-title" data-animate="fade-up" data-delay="0.2">
+                <span class="title-word">The</span>
+                <span class="title-word">World</span>
+                <span class="title-word">of</span>
+                <span class="title-word gradient-text">Iran</span>
+            </h1>
+            
+            <p class="hero-description" data-animate="fade-up" data-delay="0.4">
+                Discover Iran beyond the headlines.
+            </p>
+            
+            <div class="hero-cta" data-animate="fade-up" data-delay="0.6">
+                <button class="cta-button" onclick="smoothScrollTo('prelude')">
+                    Begin the Journey
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4L10 16M10 16L16 10M10 16L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="scroll-text-only" data-animate="fade-up" data-delay="0.65">Scroll to explore</div>
+        </div>
+        
+        <!-- Persian Pattern Overlay -->
+        <svg class="pattern-overlay" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="persian-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <path d="M50,10 L60,30 L50,50 L40,30 Z" fill="rgba(102, 126, 234, 0.05)" />
+                    <circle cx="50" cy="50" r="3" fill="rgba(118, 75, 162, 0.1)" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#persian-pattern)" />
+        </svg>
+    </section>
+
+    <!-- Prelude Section -->
+    <section id="prelude" class="section prelude-section">
+        <div class="section-content">
+            <div class="prelude-card">
+                <p>Sure, you've heard about Iran's insanely strict religious laws and political tensions, but there's a lot more to this place than what you see in the news.</p>
+                <p>From deserts to rainforests, Persians to Kurds, Islamic law to nose jobs and noodle ice cream, <span class="story-highlight">Iran is full of beauty and surprises.</span></p>
+                <p>Hi, I'm Lyola - welcome to my first ever web story!</p>
+                <p>Today, we're going to explore the beautiful world of Iran.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geography Section -->
+    <section id="geography" class="section geography-section">
+        <div class="section-content">
+            <!-- Section Header -->
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 1</span>
+                <h2 class="section-title">Geography & Diversity</h2>
+                <p class="section-intro">
+                    Iran is huge...
+                    It's is the 17th largest country by area, 
+                    with over 92 million people.                    
+                </p>
+            </div>
+
+            <!-- Geography Scrollytelling -->
+            <div class="scrolly-container geography-scrolly">
+                <!-- Sticky Map Visualization -->
+                <div class="sticky-viz">
+                    <div id="iran-map" class="interactive-map" data-map-src="assets/images/Iran_(orthographic_projection).svg"></div>
+                </div>
+
+                <!-- Scrolling Steps Container -->
+                <div class="steps-wrapper">
+                    <div class="map-narrative">
+                        <h3 class="map-lead-in">Iran's neighbours</h3>
+                        <div class="map-steps">
+                            <div class="map-step" data-highlight="">
+                                <div class="step-content">Iran shares borders with eight countries:</div>
+                            </div>
+                            <div class="map-step" data-highlight="IRQ,TUR">
+                                <div class="step-content">Iraq and Turkey to the west</div>
+                            </div>
+                            <div class="map-step" data-highlight="ARM,AZE">
+                                <div class="step-content">Armenia and Azerbaijan to the northwest</div>
+                            </div>
+                            <div class="map-step" data-highlight="TKM">
+                                <div class="step-content">Turkmenistan to the northeast</div>
+                            </div>
+                            <div class="map-step" data-highlight="AFG,PAK">
+                                <div class="step-content">Afghanistan and Pakistan to the east</div>
+                            </div>
+                            <div class="map-step" data-highlight="SEA">
+                                <div class="step-content">It's not just deserts like many people assume.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Landscape Swiper -->
+            <div class="landscape-swiper">
+                <div class="swiper-container-wrapper">
+                    <div class="swiper-button-prev">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.3164 47.0557C24.4607 47.0554 23.6762 46.7365 23.0771 46.1621L23.0498 46.1367L2.79297 27.6387L2.79297 27.6397C1.97682 26.8938 1.49902 25.8147 1.49902 24.5479C1.4991 23.419 1.9082 22.4223 2.63769 21.6816L2.78711 21.5371L2.78808 21.5371L23.0771 2.94824L23.0908 2.93653L23.1035 2.92383C23.657 2.39167 24.4079 2.08083 25.3398 2.05664C26.1245 2.06271 26.8643 2.34945 27.4482 2.87695L27.5644 2.98731C28.1707 3.59368 28.5018 4.39277 28.5019 5.25L28.499 11.793L28.499 11.7939C28.4992 13.0392 29.5096 14.0497 30.7549 14.0498L44.2432 14.0498C45.4862 14.0499 46.499 15.0626 46.499 16.3057L46.499 32.7949C46.499 34.0361 45.4866 35.0497 44.2432 35.0498L30.7539 35.0498C29.5067 35.0498 28.4993 36.0619 28.499 37.3037L28.4961 43.8643L28.4961 43.8652C28.4961 45.6152 27.0674 47.0488 25.3164 47.0557Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.6831 2.05566C23.5388 2.05594 24.3234 2.37479 24.9224 2.94922L24.9497 2.97461L45.2065 21.4727V21.4717C46.0227 22.2175 46.5005 23.2967 46.5005 24.5635C46.5004 25.6923 46.0913 26.689 45.3618 27.4297L45.2124 27.5742H45.2114L24.9224 46.1631L24.9087 46.1748L24.896 46.1875C24.3425 46.7197 23.5916 47.0305 22.6597 47.0547C21.875 47.0486 21.1352 46.7619 20.5513 46.2344L20.4351 46.124C19.8288 45.5176 19.4977 44.7186 19.4976 43.8613L19.5005 37.3184V37.3174C19.5003 36.0721 18.4899 35.0616 17.2446 35.0615H3.75635C2.51334 35.0614 1.50049 34.0487 1.50049 32.8057V16.3164C1.50049 15.0753 2.51295 14.0616 3.75635 14.0615H17.2456C18.4928 14.0615 19.5002 13.0494 19.5005 11.8076L19.5034 5.24707V5.24609C19.5035 3.4961 20.9322 2.06252 22.6831 2.05566Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <div class="swiper-container">
+                        <div class="landscape-grid swiper-wrapper">
+                            <div class="landscape-card swiper-slide" data-landscape="rainforest">
+                                <div class="landscape-image">
+                                    <img src="assets/images/Landscape/rainforests.jpg" alt="Caspian Rainforest" loading="lazy">
+                                </div>
+                                <div class="landscape-content">
+                                    <h3>Rainforests</h3>
+                                    <p>Lush forests up north near the Caspian Sea</p>
+                                </div>
+                            </div>
+
+                            <div class="landscape-card swiper-slide" data-landscape="mountains">
+                                <div class="landscape-image">
+                                    <img src="assets/images/Landscape/mountains.jpg" alt="Alborz Mountains" loading="lazy">
+                                </div>
+                                <div class="landscape-content">
+                                    <h3>Snowy Mountains</h3>
+                                    <p>The Alborz and Zagros mountain ranges</p>
+                                </div>
+                            </div>
+
+                            <div class="landscape-card swiper-slide" data-landscape="beaches">
+                                <div class="landscape-image">
+                                    <img src="assets/images/Landscape/beaches.jpg" alt="Persian Gulf" loading="lazy">
+                                </div>
+                                <div class="landscape-content">
+                                    <h3>Beaches</h3>
+                                    <p>Coastlines along the Persian Gulf</p>
+                                </div>
+                            </div>
+
+                            <div class="landscape-card swiper-slide" data-landscape="desert">
+                                <div class="landscape-image">
+                                    <img src="assets/images/Landscape/desert.png" alt="Dasht-e Lut Desert" loading="lazy">
+                                </div>
+                                <div class="landscape-content">
+                                    <h3>Desert</h3>
+                                    <p>Dasht-e Lut, one of the hottest places on Earth</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diversity Statement -->
+            <div class="diversity-statement" data-scroll-reveal>
+                <blockquote>
+                    "But Iran isn't just diverse in landscapes &mdash; its regions and people are just as unique. 
+                    Each region has its own landscape, food, and people &mdash; making the country feel more like 
+                    a collection of small worlds stitched together."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Breakdown (Main Scrollytelling) -->
+    <section id="regions" class="scrollytelling-section regions-section">
+        <!-- Section Introduction -->
+        <div class="scrolly-intro">
+            <h2 class="section-title">Iran's Regional Tapestry</h2>
+            <p class="section-subtitle">
+                Each region has its own landscape, food, and people &mdash; making the country feel more 
+                like a collection of small worlds stitched together.
+            </p>
+        </div>
+
+        <!-- Main Scrollytelling Container -->
+        <div class="scrolly-container">
+
+            <!-- Scrolling Steps Container -->
+            <div class="steps-wrapper">
+                <!-- Step 1: Northwest (Azerbaijani) -->
+                <div class="step" data-step="0" data-region="northwest">
+                    <div class="step-content">
+                        <span class="region-label">Region 1</span>
+                        <h2>Northwest</h2>
+                        <p class="region-subtitle">Azerbaijani Influenced Region</p>
+                        <p>
+                            <strong>Cities:</strong> Tabriz, Ardabil, Zanjan, Urmia
+                        </p>
+                        <p>
+                            Mountainous and green compared to the deserts, this is the homeland of 
+                            <strong>Azerbaijanis</strong>, who speak Azerbaijani Turkish and make up about 
+                            <strong>16&ndash;20% of the population</strong>. The city of Tabriz is their cultural capital.
+                        </p>
+                        <p>
+                            This region has strong ties to the Caucasus and Turkey, and Azeri traditions 
+                            (like music, cuisine, and even language) are woven into Iran's identity.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="northwest">
+                        <img src="assets/images/regions/Northwestern Iran Region.gif" alt="Northwestern Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 2: West (Kurdistan) -->
+                <div class="step" data-step="1" data-region="west">
+                    <div class="step-content">
+                        <span class="region-label">Region 2</span>
+                        <h2>West</h2>
+                        <p class="region-subtitle">Kurdistan & Kermanshah</p>
+                        <p>
+                            <strong>Population:</strong> ~10% of Iran
+                        </p>
+                        <p>
+                            Rugged Zagros Mountains dominate here, home to the <strong>Kurds</strong>, who 
+                            make up around 10% of the population. Villages cling to the slopes, and Kurdish 
+                            culture is known for lively dances, colorful clothes, and a long history of 
+                            independence movements.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="west">
+                        <img src="assets/images/regions/West Iran Region.gif" alt="West Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 3: Southwest (Khuzestan) -->
+                <div class="step" data-step="2" data-region="southwest">
+                    <div class="step-content">
+                        <span class="region-label">Region 3</span>
+                        <h2>Southwest</h2>
+                        <p class="region-subtitle">Khuzestan Province & Persian Gulf Coast</p>
+                        <p>
+                            <strong>Population:</strong> ~2% Iranian Arabs
+                        </p>
+                        <p>
+                            Hot, humid, and oil-rich. <strong>Iranian Arabs</strong> live here, especially 
+                            near the Iraq border and the Gulf. The culture mixes Arab and Persian influences 
+                            &mdash; you'll find Arabic spoken alongside Persian, seafood-heavy cuisine, and 
+                            Gulf-style traditions.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="southwest">
+                        <img src="assets/images/regions/Southwestwern Iran Region.gif" alt="Southwestern Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 4: Central Iran (Persian Heartland) -->
+                <div class="step" data-step="3" data-region="central">
+                    <div class="step-content">
+                        <span class="region-label">Region 4</span>
+                        <h2>Central Iran</h2>
+                        <p class="region-subtitle">The Persian Cultural Heartland</p>
+                        <p>
+                            <strong>Cities:</strong> Tehran, Isfahan, Yazd, Shiraz, Kashan
+                        </p>
+                        <p>
+                            This is the Persian cultural heartland. <strong>Persians</strong> dominate here, 
+                            and cities like <strong>Isfahan ("Half the World")</strong> showcase stunning Islamic 
+                            architecture.
+                        </p>
+                        <p>
+                            <strong>Shiraz</strong> is famous for poetry, gardens, and wine (before the ban). 
+                            <strong>Yazd</strong> is a desert city with windcatchers and ancient Zoroastrian 
+                            fire temples. And <strong>Tehran</strong>, the capital, is a chaotic mix of 
+                            tradition and modernity.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="central">
+                        <img src="assets/images/regions/Central Iran.gif" alt="Central Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 5: West-Central (Lorestan) -->
+                <div class="step" data-step="4" data-region="westcentral">
+                    <div class="step-content">
+                        <span class="region-label">Region 5</span>
+                        <h2>West-Central</h2>
+                        <p class="region-subtitle">Lorestan, Ilam, Chaharmahal, Kohgiluyeh</p>
+                        <p>
+                            <strong>Population:</strong> ~6% Lurs
+                        </p>
+                        <p>
+                            Mountainous and tribal, this is the land of the <strong>Lurs</strong>, a people 
+                            related to Persians but with their own dialect and culture. Known for hospitality, 
+                            storytelling, and traditional music, many still keep semi-nomadic traditions alive.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="westcentral">
+                        <img src="assets/images/regions/West-Central Iran Region.gif" alt="West-Central Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 6: Southeast (Sistan & Baluchistan) -->
+                <div class="step" data-step="5" data-region="southeast">
+                    <div class="step-content">
+                        <span class="region-label">Region 6</span>
+                        <h2>Southeast</h2>
+                        <p class="region-subtitle">Sistan & Baluchistan</p>
+                        <p>
+                            <strong>Population:</strong> ~2% Baluchis
+                        </p>
+                        <p>
+                            One of Iran's driest, least developed regions, home to the <strong>Baluchis</strong>. 
+                            Their culture, clothing, and language connect them more with Pakistan and Afghanistan. 
+                            Despite hardship, Baluch hospitality and traditions stand strong.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="southeast">
+                        <img src="assets/images/regions/Southeast Iran Region.gif" alt="Southeast Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 7: Northeast (Khorasan) -->
+                <div class="step" data-step="6" data-region="northeast">
+                    <div class="step-content">
+                        <span class="region-label">Region 7</span>
+                        <h2>Northeast</h2>
+                        <p class="region-subtitle">Khorasan &ndash; Mashhad & Turkmen Sahra</p>
+                        <p>
+                            Two worlds in one: <strong>Mashhad</strong>, Iran's second city, is the center of 
+                            Shia pilgrimage thanks to Imam Reza's shrine.
+                        </p>
+                        <p>
+                            Further north in Golestan, the <strong>Turkmens</strong> live in steppe lands, 
+                            famous for horse breeding, carpets, and Central Asian traditions.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="northeast">
+                        <img src="assets/images/regions/Northeast Iran Region.gif" alt="Northeast Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 8: Northern Iran (Caspian) -->
+                <div class="step" data-step="7" data-region="north">
+                    <div class="step-content">
+                        <span class="region-label">Region 8</span>
+                        <h2>Northern Iran</h2>
+                        <p class="region-subtitle">Caspian Region &ndash; Gilan & Mazandaran</p>
+                        <p>
+                            Lush, rainy, and green &mdash; this region feels like another planet compared to Iran's 
+                            deserts. Rice paddies, forests, and caviar come from here.
+                        </p>
+                        <p>
+                            The people, called <strong>Gilaks and Mazandaranis</strong>, have their own 
+                            languages and traditions. Iranians from other regions often come here for summer 
+                            holidays.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="north">
+                        <img src="assets/images/regions/North Iran Region.gif" alt="North Iran Region" />
+                    </div>
+                </div>
+
+                <!-- Step 9: Deserts -->
+                <div class="step" data-step="8" data-region="desert">
+                    <div class="step-content">
+                        <span class="region-label">Region 9</span>
+                        <h2>The Deserts</h2>
+                        <p class="region-subtitle">Dasht-e Lut & Dasht-e Kavir</p>
+                        <p>
+                            The extreme side of Iran: salt flats, shifting dunes, and some of the 
+                            <strong>hottest recorded temperatures on Earth</strong>.
+                        </p>
+                        <p>
+                            Few people live here, but the landscapes look straight out of a sci-fi movie.
+                        </p>
+                    </div>
+                    <div class="step-image" data-region="desert">
+                        <img src="assets/images/regions/Desert Region of Iran.gif" alt="Desert Region of Iran" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demographics -->
+    <section id="demographics" class="section demographics-section">
+        <div class="section-content">
+            <!-- Section Header -->
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 3</span>
+                <h2 class="section-title">The People of Iran</h2>
+                <p class="section-intro">
+                    Iran's ethnic diversity is as rich as its landscapes. From Persians to Azeris, 
+                    Kurds to Baluchis, each group contributes to the nation's cultural tapestry.
+                </p>
+            </div>
+
+            <!-- Main Demographics Visualization -->
+            <div class="demographics-container">
+                <!-- Sticky Chart Area -->
+                <div class="demographics-viz-sticky">
+                    <div id="demographics-chart" class="demographics-chart"></div>
+                    
+                    <!-- Chart Title (updates with scroll) -->
+                    <div class="chart-title-card">
+                        <h3 id="chart-title">Ethnic Breakdown</h3>
+                        <p id="chart-subtitle">Population by ethnic group</p>
+                    </div>
+                </div>
+
+                <!-- Scrolling Steps -->
+                <div class="demographics-steps">
+                    <!-- Step 1: Introduction -->
+                    <div class="demo-step" data-demo-step="0">
+                        <div class="step-content">
+                            <h3>A Diverse Nation</h3>
+                            <p>
+                                The ethnic breakdown all around Iran reveals a fascinating diversity 
+                                that many outsiders don't expect.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Persians -->
+                    <div class="demo-step" data-demo-step="1">
+                        <div class="step-content">
+                            <h3>Persians: 61%</h3>
+                            <p>
+                                <strong>Persians</strong> are around <strong>61% of the population</strong>, 
+                                forming the largest ethnic group. They primarily speak Farsi (Persian) and 
+                                are concentrated in central and southern Iran.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Azeris -->
+                    <div class="demo-step" data-demo-step="2">
+                        <div class="step-content">
+                            <h3>Azeris: 16%</h3>
+                            <p>
+                                <strong>Azeris</strong> are about <strong>16%</strong>, mainly in the northwest. 
+                                Fun fact: Iran's Supreme Leader, <strong>Ali Khamenei, is Azeri</strong>.
+                            </p>
+                            <p class="highlight-fact">
+                                🎵 Azeri music and cuisine are integral to Iranian culture
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Kurds -->
+                    <div class="demo-step" data-demo-step="3">
+                        <div class="step-content">
+                            <h3>Kurds: 10%</h3>
+                            <p>
+                                <strong>Kurds</strong> are around <strong>10%</strong>, mostly in western Iran. 
+                                Known for their vibrant culture, colorful traditional clothing, and distinctive music.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Lurs -->
+                    <div class="demo-step" data-demo-step="4">
+                        <div class="step-content">
+                            <h3>Lurs: 6%</h3>
+                            <p>
+                                <strong>Lurs</strong> are roughly <strong>6%</strong>. Related to Persians but 
+                                with their own dialect and rich traditions of hospitality and storytelling.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Arabs -->
+                    <div class="demo-step" data-demo-step="5">
+                        <div class="step-content">
+                            <h3>Arabs: 2%</h3>
+                            <p>
+                                <strong>Arabs</strong> are about <strong>2%</strong>, near the Persian Gulf. 
+                                Their culture blends Arab and Persian influences, with Arabic spoken alongside Farsi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Baluchis -->
+                    <div class="demo-step" data-demo-step="6">
+                        <div class="step-content">
+                            <h3>Baluchis: 2%</h3>
+                            <p>
+                                <strong>Baluchis</strong> are about <strong>2%</strong>, in the southeast. 
+                                Their culture connects more with Pakistan and Afghanistan than central Iran.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 8: Others -->
+                    <div class="demo-step" data-demo-step="7">
+                        <div class="step-content">
+                            <h3>Turkmen & Others: 3%</h3>
+                            <p>
+                                <strong>Turkmen and others</strong> are around <strong>2&ndash;3%</strong>. 
+                                This includes various smaller ethnic groups throughout the country.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 9: Languages -->
+                    <div class="demo-step" data-demo-step="8">
+                        <div class="step-content">
+                            <h3>Linguistic Diversity</h3>
+                            <p>
+                                While <strong>Persian (Farsi) is official</strong>, many people speak 
+                                Azerbaijani, Kurdish, Arabic, Baluchi, and more.
+                            </p>
+                            <p>
+                                Iran is truly a multilingual nation, with regional languages thriving 
+                                alongside the official language.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Network Visualization -->
+            <div class="language-network-container" data-scroll-reveal>
+                <h3 class="subsection-title">Language Connections</h3>
+                <p class="subsection-intro">
+                    How Iran's languages connect to broader linguistic families
+                </p>
+                <div id="language-network" class="language-network"></div>
+            </div>
+
+            <!-- Summary Stats Grid -->
+            <div class="stats-grid" data-scroll-reveal>
+                <div class="stat-card">
+                    <div class="stat-number">92M+</div>
+                    <div class="stat-label">Total Population</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Major Ethnic Groups</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Language Families</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Languages & Dialects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Islamic Regime -->
+    <section id="regime" class="section regime-section">
+        <div class="section-content">
+            <!-- Section Header -->
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 4</span>
+                <h2 class="section-title">The Islamic Regime</h2>
+                <p class="section-intro">
+                    How did a country with so many secular-minded people become known for its strict Islamic laws? 
+                    Let's explore the 1979 Revolution and Iran's unique political system.
+                </p>
+            </div>
+
+            <!-- Religion Overview -->
+            <div class="religion-container" data-scroll-reveal>
+                <h3 class="subsection-title">Religious Landscape</h3>
+                <div class="religion-viz-wrapper">
+                    <div id="religion-chart" class="religion-chart"></div>
+                    <div class="religion-info">
+                        <div class="religion-stat">
+                            <span class="stat-large">85-90%</span>
+                            <span class="stat-label">Shia Muslim</span>
+                            <p>Iran is the world's largest Shia-majority country</p>
+                        </div>
+                        <div class="religion-stat">
+                            <span class="stat-large">10-15%</span>
+                            <span class="stat-label">Sunni & Others</span>
+                            <p>Including Kurds, Baluchis, and minority religions</p>
+                        </div>
+                        <div class="religion-note">
+                            <p>
+                                <strong>Important context:</strong> Many Iranians, especially young people and 
+                                those living abroad, are secular. Even inside Iran, people often follow Islam 
+                                more as culture than as strict religion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1979 Revolution Timeline -->
+            <div class="timeline-container">
+                <h3 class="subsection-title">The 1979 Islamic Revolution</h3>
+                <p class="subsection-intro">
+                    A pivotal moment that transformed Iran from monarchy to Islamic Republic
+                </p>
+                
+                <!-- Timeline Steps -->
+                <div class="timeline-steps-centered">
+                    <div class="timeline-step" data-timeline="before">
+                        <div class="step-content-centered">
+                            <span class="timeline-date">Before 1979</span>
+                            <h4>The Monarchy</h4>
+                            <p>
+                                Iran was ruled by Shah Mohammad Reza Pahlavi. The period saw 
+                                modernization but also political repression, corruption, and 
+                                Western influence that alienated many Iranians.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-step" data-timeline="revolution">
+                        <div class="step-content-centered">
+                            <span class="timeline-date">1979</span>
+                            <h4>The Revolution</h4>
+                            <p>
+                                Mass protests and strikes led by Ayatollah Khomeini overthrew 
+                                the monarchy. The revolution united diverse groups seeking change, 
+                                from religious conservatives to leftists and liberals.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-step" data-timeline="after">
+                        <div class="step-content-centered">
+                            <span class="timeline-date">After 1979</span>
+                            <h4>Islamic Republic</h4>
+                            <p>
+                                Iran transformed into an Islamic Republic, combining religious 
+                                leadership with democratic elements. The system consolidated power 
+                                under religious authority.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Government Structure -->
+            <div class="government-structure" data-scroll-reveal>
+                <h3 class="subsection-title">How It Works Today</h3>
+                <p class="subsection-intro">
+                    Iran's government combines elected and appointed positions under religious oversight
+                </p>
+                
+                <div id="government-chart" class="government-chart"></div>
+                
+                <div class="government-explainer">
+                    <div class="explainer-card">
+                        <div class="explainer-icon">👑</div>
+                        <h4>Supreme Leader</h4>
+                        <p>
+                            Currently <strong>Ayatollah Ali Khamenei</strong> (who is Azeri, not Persian). 
+                            Holds ultimate authority over all branches of government, military, and judiciary.
+                        </p>
+                    </div>
+                    
+                    <div class="explainer-card">
+                        <div class="explainer-icon">🗳️</div>
+                        <h4>Guardian Council</h4>
+                        <p>
+                            12 members (6 clerics, 6 jurists) who vet all candidates for elected office 
+                            and can veto legislation deemed un-Islamic.
+                        </p>
+                    </div>
+                    
+                    <div class="explainer-card">
+                        <div class="explainer-icon">👔</div>
+                        <h4>President</h4>
+                        <p>
+                            Elected by the people but candidates must be approved by Guardian Council. 
+                            Manages domestic policy but has limited power compared to Supreme Leader.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Public vs Private Life -->
+            <div class="duality-container">
+                <h3 class="subsection-title">The Twist: Public vs Private</h3>
+                <p class="subsection-intro">
+                    Behind closed doors, many Iranians live modern, even Westernized lives
+                </p>
+                
+                <div class="split-screen">
+                    <!-- Public Life -->
+                    <div class="split-panel public-life">
+                        <h4>Public Life</h4>
+                        <div class="life-items">
+                            <div class="life-item">
+                                <span class="item-icon">🧕</span>
+                                <span class="item-text">Hijab mandatory for women</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">🚫</span>
+                                <span class="item-text">Alcohol banned</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">📱</span>
+                                <span class="item-text">Social media blocked</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">👮</span>
+                                <span class="item-text">Morality police enforcing dress code</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">⚖️</span>
+                                <span class="item-text">Strict Islamic law (Sharia)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Private Life -->
+                    <div class="split-panel private-life">
+                        <h4>Private Life</h4>
+                        <div class="life-items">
+                            <div class="life-item">
+                                <span class="item-icon">🎉</span>
+                                <span class="item-text">House parties with music & dancing</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">🔓</span>
+                                <span class="item-text">VPNs bypass restrictions</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">👗</span>
+                                <span class="item-text">Western fashion at home</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">💬</span>
+                                <span class="item-text">Open discussions about politics</span>
+                            </div>
+                            <div class="life-item">
+                                <span class="item-icon">🌍</span>
+                                <span class="item-text">Modern, globalized lifestyles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="duality-note">
+                    <p>
+                        This duality between public rules and private freedom is a defining feature 
+                        of contemporary Iranian society. Many navigate between these two worlds daily.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Women in Academia -->
+            <div class="women-academia" data-scroll-reveal>
+                <h3 class="subsection-title">Women Excelling in Academia</h3>
+                <p class="subsection-intro">
+                    Despite restrictions on women in public life, Iranian girls are excelling academically
+                </p>
+                
+                <div class="academia-content">
+                    <div id="academia-chart" class="academia-chart"></div>
+                    
+                    <div class="academia-text">
+                        <div class="academia-stat">
+                            <span class="stat-huge">60%+</span>
+                            <span class="stat-label">Women in Universities</span>
+                        </div>
+                        <p>
+                            Women make up a large portion &mdash; sometimes even the <strong>majority</strong> &mdash; 
+                            of university students in STEM fields like medicine, engineering, and computer science.
+                        </p>
+                        <p class="highlight-box">
+                            <strong>A fascinating contrast:</strong> While social rules may be strict, education 
+                            and ambition thrive, especially among young women. This creates a highly educated 
+                            population seeking more opportunities and freedoms.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Protest Movements -->
+            <div class="protest-section" data-scroll-reveal>
+                <blockquote class="large-quote">
+                    "In recent years, movements like 'Women, Life, Freedom' have shown the world that many 
+                    Iranians, especially the youth, are demanding change."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Quirks -->
+    <section id="culture" class="section quirks-section">
+        <div class="section-content">
+            <!-- Section Header -->
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 5</span>
+                <h2 class="section-title">Iran's Goofy & Unexpected Side</h2>
+                <p class="section-intro">
+                    Beyond politics and poetry, Iran has a delightfully quirky everyday culture.
+                </p>
+            </div>
+
+            <!-- Quirks Grid -->
+            <div class="quirks-grid" data-scroll-reveal>
+                <!-- Quirk 1: Nose Jobs -->
+                <div class="quirk-card" data-quirk="nose">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/culture/Nose.jpg" alt="Nose Job" />
+                    </div>
+                    <h3>Nose Job Capital of the World</h3>
+                    <p>
+                        Iran performs more rhinoplasties per capita than any country. Bandages are worn like badges of honor&mdash;even faked as fashion!
+                    </p>
+                    <div class="quirk-stat">~150,000+ surgeries/year</div>
+                </div>
+
+                <!-- Quirk 2: Faloodeh -->
+                <div class="quirk-card" data-quirk="dessert">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/culture/Ice.jpg" alt="Faloodeh" />
+                    </div>
+                    <h3>Ice Cream... With Noodles?</h3>
+                    <p>
+                        Faloodeh: frozen rice noodles soaked in rosewater, lime, and sugar. Served with saffron ice cream&mdash;golden, fragrant, and iconic.
+                    </p>
+                </div>
+
+                <!-- Quirk 3: Tarof -->
+                <div class="quirk-card" data-quirk="tarof">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/culture/Tarof.jpg" alt="Tarof" />
+                    </div>
+                    <h3>Tarof &ndash; The Politeness Game</h3>
+                    <p>
+                        A social ritual where you refuse what you want&mdash;twice&mdash;before accepting. "No, no, I insist!" is the national sport of hospitality.
+                    </p>
+                </div>
+
+                <!-- Quirk 4: Cheetahs -->
+                <div class="quirk-card" data-quirk="cheetah">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/culture/Cat.webp" alt="Cheetah" />
+                    </div>
+                    <h3>Last Wild Asiatic Cheetahs</h3>
+                    <p>
+                        Fewer than 12 remain&mdash;only in Iran. A national symbol of fragility and pride.
+                    </p>
+                    <div class="quirk-stat">Critically Endangered</div>
+                </div>
+
+                <!-- Quirk 5: Peykan -->
+                <div class="quirk-card" data-quirk="peykan">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/culture/Car.png" alt="Peykan Car" />
+                    </div>
+                    <h3>The Peykan &ndash; National Car</h3>
+                    <p>
+                        A 1970s boxy sedan, still running on nostalgia and spare parts. Cultural icon of resilience.
+                    </p>
+                </div>
+
+                <!-- Quirk 6: Road Sign Selfies -->
+                <div class="quirk-card" data-quirk="selfie">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/culture/Selfie.png" alt="Selfie" />
+                    </div>
+                    <h3>Selfies with Road Signs</h3>
+                    <p>
+                        Iranian tourists abroad love posing with signs like "Berlin" or "Paris"&mdash;a quirky travel ritual turned meme.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Influence -->
+    <section id="legacy" class="section legacy-section">
+        <div class="section-content">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 6</span>
+                <h2 class="section-title">Persian Cultural Legacy</h2>
+                <p class="section-intro">
+                    For centuries, Persian culture shaped empires far beyond Iran's borders.
+                </p>
+            </div>
+
+            <!-- Nowruz Map -->
+            <div class="nowruz-map-container" data-scroll-reveal>
+                <h3 class="subsection-title">Nowruz: A Shared New Year</h3>
+                <p class="subsection-intro">Celebrated by over 300 million people across 15+ countries.</p>
+                <p class="subsection-intro">Nowruz, the Persian New Year, celebrates spring with fire-jumping and feasts. In fact, Iran’s cultural influence stretches far beyond its borders. For centuries, Persian culture shaped much of Central Asia, the Caucasus, and even parts of South Asia. Countries like Azerbaijan, Tajikistan, and Kazakhstan still celebrate Nowruz as a major holiday, thanks to Iran’s historical ties.</p>
+                <div class="nowruz-image-container">
+                    <img id="nowruz-image" src="assets/images/Nowruz/Iran.jpg" alt="Nowruz Celebration in Iran" />
+                </div>
+                <div class="nowruz-countries">
+                    <span class="country-tag" data-country="Iran">Iran</span>
+                    <span class="country-tag" data-country="Afghanistan">Afghanistan</span>
+                    <span class="country-tag" data-country="Azerbaijan">Azerbaijan</span>
+                    <span class="country-tag" data-country="Tajikistan">Tajikistan</span>
+                    <span class="country-tag" data-country="Kazakhstan">Kazakhstan</span>
+                    <span class="country-tag" data-country="Uzbekistan">Uzbekistan</span>
+                    <!-- + more -->
+                </div>
+            </div>
+
+            <!-- Persian Cultural Legacy Accordion -->
+            <div class="legacy-accordion" data-scroll-reveal>
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span class="accordion-title">Poetry</span>
+                        <span class="accordion-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>Persian poetry from Hafez and Rumi is still quoted daily.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span class="accordion-title">Farsi</span>
+                        <span class="accordion-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>The Persian language was once a major cultural and literary language across the region, especially in courts and poetry.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span class="accordion-title">Art</span>
+                        <span class="accordion-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>Persian art, architecture, and cuisine have left their mark everywhere from Turkey to India.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span class="accordion-title">And Persian carpets?</span>
+                        <span class="accordion-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="accordion-content" aria-hidden="true">
+                        <p>They're not just rugs&mdash;they're luxury handmade art, sometimes worth thousands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospitality & Outro -->
+    <section id="hospitality" class="section hospitality-section">
+        <div class="section-content">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 7</span>
+                <h2 class="section-title">The Heart of Iran: Hospitality</h2>
+                <p class="section-intro">
+                    "A guest is a gift from God." In Iran, strangers become family over tea.
+                </p>
+                <p class="section-intro">
+                    Perhaps Iran’s most beautiful quality? Its hospitality.
+Whether in Iran or abroad, Iranians are famously warm and welcoming. It’s common for strangers to invite you in for tea, food, or even a home-cooked meal.
+                </p>
+            </div>
+
+            <div class="hospitality-stories">
+                <div class="story-card" data-scroll-reveal>
+                    <blockquote>"During my first trip to Iran, I remember being amazed by how much people would help me and be kind to me anywhere I would go. One day, I just arrived in Shiraz and was waiting in an ice cream shop. Another customer saw I was struggling with the language and helped me out. Then, he paid for my ice cream and simply left, expecting nothing in return. It was a gesture I'll never forget."</blockquote>
+                    <cite>&mdash; Daisy Lorenzi, a French writer and traveler</cite>
+                    <a href="https://surfiran.com/mag/the-legendary-iranian-hospitality/" target="_blank" rel="noopener">Read the full article</a>
+                </div>
+                <div class="story-card" data-scroll-reveal>
+                    <blockquote>"I have read the most incredible stories, and I wanted to experience even more of the amazing Iranian hospitality. My experience in Sanandaj and Palangan was beyond my wildest dreams. Kurdish people have beautiful souls. Unbelievably, in Tabriz and Kandovan I was just as impressed. The people of Iran are among the nicest in the world!"</blockquote>
+                    <cite>&mdash; Coni, a Chilean Human Rights lawyer</cite>
+                    <a href="https://experiencingtheglobe.com/perfect-30-days-in-iran-part-4/" target="_blank" rel="noopener">Read the full article</a>
+                </div>
+                <div class="story-card" data-scroll-reveal>
+                    <blockquote>"While, I was offered Taarof almost everywhere from shops to buses to hotels to streets to markets, true hospitality came in between and boy was I really floored. People stayed back and guided me to taxis. A local Iranian lady took me to the bus station and haggled the prices for me when she could have just given me directions. Almost in all cities, locals offered me to join them for a cup of tea and some sweets."</blockquote>
+                    <cite>&mdash; Sankara Subramanian, Professional Travel Blogger</cite>
+                    <a href="https://www.beontheroad.com/2015/03/the-great-iranian-hospitality.html" target="_blank" rel="noopener">Read the full article</a>
+                </div>
+            </div>
+
+            <div class="hospitality-visual" data-scroll-reveal>
+                <div class="tea-cup">
+                    <div class="steam"></div>
+                </div>
+                <p class="highlight-text">Tea is never just tea&mdash;it's an invitation to stay.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contradictions & Dualities -->
+    <section id="dualities" class="section dualities-section">
+        <div class="section-content">
+            <h2 class="section-title">Iran in Contradictions</h2>
+            <p class="section-intro">A nation of beautiful tensions.</p>
+
+            <div class="duality-pairs">
+                <div class="duality-pair">
+                    <div class="duality-side">Strict Islamic laws</div>
+                    <div class="duality-separator">&harr;</div>
+                    <div class="duality-side">Growing secular population</div>
+                </div>
+                <div class="duality-pair">
+                    <div class="duality-side">Hijab enforced in public</div>
+                    <div class="duality-separator">&harr;</div>
+                    <div class="duality-side">Women lead in STEM degrees</div>
+                </div>
+                <div class="duality-pair">
+                    <div class="duality-side">Ancient Zoroastrian roots</div>
+                    <div class="duality-separator">&harr;</div>
+                    <div class="duality-side">TikTok-savvy Gen Z</div>
+                </div>
+                <div class="duality-pair">
+                    <div class="duality-side">State-controlled media</div>
+                    <div class="duality-separator">&harr;</div>
+                    <div class="duality-side">Underground music scenes</div>
+                </div>
+            </div>
+
+            <div class="final-thought" data-scroll-reveal>
+                <p>
+                    Iran cannot be reduced to headlines. It lives in the space between rules and dreams.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outro -->
+    <section id="outro" class="section outro-section">
+        <div class="section-content">
+            <div class="outro-content" data-scroll-reveal>
+                <h2>So next time you think of Iran...</h2>
+                <p class="outro-list">
+                    Think deserts and rainforests,<br>
+                    Nose jobs and poetry,<br>
+                    Cheetahs and carpets,<br>
+                    Tarof and TikTok,<br>
+                    Rules and revolutions.
+                </p>
+                <p class="outro-message">
+                    Iran is not a monolith. It's millions of stories&mdash;waiting to be heard.
+                </p>
+
+                <div class="outro-cta">
+                    <p>Did I miss something? Got a story to share?</p>
+                    <a href="mailto:lyola@explores.world" class="cta-link">Write to me</a>
+                </div>
+
+                <div class="signature">
+                    &mdash; Lyola<br>
+                    <span class="subtitle">Exploring the world, one story at a time.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; Lyola Explores the World</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollama@3.2.0/build/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/visualizations.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/scrollytelling.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

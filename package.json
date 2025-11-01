@@ -1,0 +1,24 @@
+{
+  "name": "iran-scrollytelling",
+  "version": "1.0.0",
+  "description": "An immersive, data-driven journey through Iran's geography, culture, and complexity.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server",
+    "dev": "npx http-server -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scrollytelling",
+    "iran",
+    "data-visualization",
+    "d3js",
+    "scrollama",
+    "gsap"
+  ],
+  "author": "Lyola",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
