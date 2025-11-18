@@ -1,0 +1,24 @@
+{
+  "name": "brazil-scrollytelling",
+  "version": "1.0.0",
+  "description": "An immersive, data-driven journey through Brazil's geography, culture, and complexity.",
+  "main": "index-brazil.html",
+  "scripts": {
+    "start": "npx http-server",
+    "dev": "npx http-server -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scrollytelling",
+    "brazil",
+    "data-visualization",
+    "d3js",
+    "scrollama",
+    "gsap"
+  ],
+  "author": "Lyola",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

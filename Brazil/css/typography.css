@@ -1,0 +1,115 @@
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+/* Import fonts if not using Google Fonts CDN */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap');
+
+/* Base Typography */
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Emphasis */
+strong, b {
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+em, i {
+    font-style: italic;
+}
+
+/* Code (if needed) */
+code {
+    font-family: 'Courier New', monospace;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Special Typography Classes */
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-large {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.text-small {
+    font-size: 0.875rem;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Persian-style decorative text */
+.decorative-initial::first-letter {
+    font-size: 3em;
+    font-family: var(--font-heading);
+    float: left;
+    line-height: 0.8;
+    margin-right: 0.1em;
+    color: var(--color-primary);
+}

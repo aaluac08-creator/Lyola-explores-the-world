@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Brazil beyond the headlines: from Amazon rainforests to urban metropolises, indigenous peoples to diverse cultures, ancient traditions to modern lives.">
+
+    <title>The World of Brazil | An Interactive Journey</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The World of Brazil">
+    <meta property="og:description" content="An interactive scrollytelling experience exploring Brazil's diversity, culture, and complexity.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css?v=1.1">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div id="progress-bar" class="progress-bar"></div>
+
+    <!-- Navigation (appears on scroll) -->
+    <nav id="main-nav" class="main-nav hidden">
+        <div class="nav-content">
+            <a href="#top" class="nav-logo">The World of Brazil</a>
+            <ul class="nav-links">
+                <li><a href="#history">History</a></li>
+                <li><a href="#races">Races</a></li>
+                <li><a href="#geography">Geography</a></li>
+                <li><a href="#regions">Regions</a></li>
+                <li><a href="#culture">Culture</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-nav" class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#history">History</a></li>
+            <li><a href="#races">Races</a></li>
+            <li><a href="#geography">Geography</a></li>
+            <li><a href="#regions">Regions</a></li>
+            <li><a href="#culture">Culture</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Animated Background -->
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <canvas id="particles-canvas"></canvas>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-subtitle" data-animate="fade-up">
+                <span class="subtitle-line">Lyola Explores the World</span>
+            </div>
+
+            <h1 class="hero-title" data-animate="fade-up" data-delay="0.2">
+                <span class="title-word">The</span>
+                <span class="title-word">World</span>
+                <span class="title-word">of</span>
+                <span class="title-word gradient-text">Brazil</span>
+            </h1>
+
+            <p class="hero-description" data-animate="fade-up" data-delay="0.4">
+                Discover Brazil beyond the headlines.
+            </p>
+
+            <div class="hero-cta" data-animate="fade-up" data-delay="0.6">
+                <button class="cta-button" onclick="smoothScrollTo('prelude')">
+                    Begin the Journey
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4L10 16M10 16L16 10M10 16L4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="scroll-text-only" data-animate="fade-up" data-delay="0.65">Scroll to explore</div>
+        </div>
+
+        <!-- Brazilian Pattern Overlay -->
+        <svg class="pattern-overlay" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="brazilian-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <path d="M50,10 L60,30 L50,50 L40,30 Z" fill="rgba(102, 126, 234, 0.05)" />
+                    <circle cx="50" cy="50" r="3" fill="rgba(118, 75, 162, 0.1)" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#brazilian-pattern)" />
+        </svg>
+    </section>
+
+    <!-- Prelude Section -->
+    <section id="prelude" class="section prelude-section">
+        <div class="section-content">
+            <div class="prelude-card">
+                <div style="display: flex; justify-content: center; align-items: center; padding: 2rem; width: 100%;">
+                    <div style="padding:56.25% 0 0 0;position:relative; width: 100%; max-width: 560px;">
+                        <iframe src="https://player.vimeo.com/video/1135171151?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Intro Finale"></iframe>
+                    </div>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="section history-section">
+        <div class="section-content">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Prologue</span>
+                <h2 class="section-title">History in Motion</h2>
+                <p class="section-intro">
+                    Before Brazil became a modern nation, tectonic shifts, Indigenous ingenuity, and global migrations
+                    layered stories across its landscapes. Scroll through the eras that shaped the country we know today.
+                </p>
+            </div>
+
+            <div class="scrolly-container history-scrolly">
+                <div class="history-steps">
+                    <article class="history-step" data-era="formation">
+                        <div class="history-entry" data-history-index="0">
+                            <div class="history-visual">
+                                <img src="assets/images/history/0-Gondwana-Parts-Ways.gif" alt="Gondwana Parts Ways illustration">
+                            </div>
+                            <div class="step-content" data-scrollama-index="0">
+                                <p class="step-kicker">The Birth of a Nation</p>
+                                <h3>Gondwana Parts Ways</h3>
+                                <p>
+                                    180 million years ago, Brazil and Africa were once joined in the ancient supercontinent
+                                    Gondwana. Then tectonic forces split them apart, creating the Atlantic Ocean. Their
+                                    coastlines still fit together like puzzle pieces.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="history-step" data-era="formation">
+                        <div class="history-entry" data-history-index="1">
+                            <div class="history-visual">
+                                <img src="assets/images/history/1-The-First-Brazilians-Arrive.png" alt="First Brazilians arrive illustration">
+                            </div>
+                            <div class="step-content" data-scrollama-index="1">
+                                <p class="step-kicker">The Birth of a Nation</p>
+                                <h3>The First Brazilians Arrive</h3>
+                                <p>
+                                    Fast forward to 20,000 years ago. Humans who had crossed from Asia to North America via the Bering Land Bridge began their southward journey. By 11,000 years ago, they reached what would become Brazil. These were the Indigenous peoples of Brazil, the Amerindians—the first Brazilians, who would build civilizations across this vast land for millennia before the arrival of Europeans.
+                                </p>
+                                <p>
+                                    By the late 15th century, this vast territory supported millions of people belonging to
+                                    hundreds of distinct societies and speaking more than 170 languages. The major cultural
+                                    groups included the Tupi-Guarani along the coastline practicing swidden agriculture; the
+                                    J&ecirc; peoples across the interior plateau as skilled hunters and foragers; and the
+                                    Arawak and Carib groups dominant in the North and throughout the Amazon basin.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    
+
+                    <article class="history-step" data-era="formation">
+                        <div class="history-entry" data-history-index="4">
+                            <div class="history-visual">
+                                <img src="assets/images/history/4-Life-in-Ocas.jpg" alt="Life in ocas illustration">
+                            </div>
+                            <div class="step-content" data-scrollama-index="4">
+                                <p class="step-kicker">The Birth of a Nation</p>
+                                <h3>Life in Ocas</h3>
+                                <p>
+                                    Daily life centered around extended families living together in large communal houses called
+                                    ocas, where responsibilities were shared and cooking was done collectively. Spiritual beliefs
+                                    were rooted in animism, the idea that humans, animals, plants, and natural forces were deeply
+                                    interconnected. Far from untouched wilderness, the Amazon and surrounding regions were carefully
+                                    managed landscapes shaped by generations of ecological knowledge&mdash;knowledge that guided
+                                    hunting, fishing, farming, and the creation of rich black earth soils. In this vibrant
+                                    pre-contact world, Indigenous societies built dynamic cultures, complex agricultural systems,
+                                    and strong social networks that had been thriving for millennia before Europeans set foot on
+                                    Brazilian shores.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="history-step" data-era="collision">
+                        <div class="history-entry" data-history-index="5">
+                            <div class="history-visual">
+                                <img src="assets/images/history/5-Cabral-and-Pau-brasil.jpg" alt="Cabral and Pau-brasil illustration">
+                            </div>
+                            <div class="step-content" data-scrollama-index="5">
+                                <p class="step-kicker">When Worlds Collided</p>
+                                <h3>Cabral and Pau-brasil</h3>
+                                <p>
+                                    April 1500: Portuguese navigator Pedro &Aacute;lvares Cabral "discovered" Brazil while searching for
+                                    India. He found 5&ndash;6 million Indigenous people already there. The Portuguese discovered pau-brasil,
+                                    a valuable red dyewood. The Portuguese word <em>brasa</em> means "ember," capturing the wood's glowing
+                                    red color. That's how Brazil got its name: "red like an ember." But colonization came at a
+                                    devastating cost. By 1700, disease, warfare, and enslavement had reduced the Indigenous
+                                    population to just 1.2 million.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="history-step" data-era="melting">
+                        <div class="history-entry" data-history-index="6">
+                            <div class="history-visual">
+                                <img src="assets/images/history/6-Centuries-of-Migration.jpg" alt="Centuries of migration illustration">
+                            </div>
+                            <div class="step-content" data-scrollama-index="6">
+                                <p class="step-kicker">The Making of a Melting Pot</p>
+                                <h3>Centuries of Migration</h3>
+                                <p>
+                                    <strong>The 16th Century:</strong> the Portuguese shifted their economic focus to something even more profitable: sugar. They established massive sugar plantations that required intensive, backbreaking labor under the tropical sun.Sugar plantations demanded intensive labor. Between 1500&ndash;1850,
+                                    3&ndash;5 million enslaved Africans were brought to Brazil&mdash;the largest number in the Americas. To put this in perspective, only 650,000 enslaved Africans arrived in the North American colonies during the same period. Brazil received nearly eight times as many enslaved people as the United States.
+                                </p>
+                                <p>
+                                    <strong>The 19th Century:</strong> 4&ndash;5 million Europeans arrived from Italy, Spain, Germany, and
+                                    Slavic countries seeking economic opportunities.
+                                </p>
+                                <p>
+                                    <strong>1908:</strong> Brazil became the first Latin American country to welcome Japanese immigrants.
+                                    About 230,000 settled, primarily in S&atilde;o Paulo.
+                                </p>
+                                <p>
+                                    <strong>Arab Immigration:</strong> Nearly 200,000 Arabs, mostly from Lebanon and Syria, made Brazil home.
+                                </p>
+                                <p>
+                                    The result? From 1500&ndash;1972 the immigrants to Brasil were: 58% European, 40% African, 2% Asian&mdash;all mixing in Brazil's
+                                    incredible melting pot and created a new nation of Brasilians.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Races Section -->
+    <section id="races" class="section races-section">
+        <div class="section-content">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 1</span>
+                <h2 class="section-title">Race: It's Complicated</h2>
+                <p class="section-intro">
+                    Race in Brazil is less about bloodlines and more about how you look. Families can span the spectrum,
+                    and identities often shift with context. Here's how Brazilians describe themselves&mdash;and what
+                    DNA reveals beneath the surface.
+                </p>
+            </div>
+
+            <blockquote class="race-bar-block" style="opacity: 1; transform: translate(0px, 0px);">
+                <p class="race-bar-intro" data-scroll-reveal>Racial groups in Brazil according to the official 2022 census:</p>
+                <div class="race-stats-grid">
+                    <div class="race-bar" data-scroll-reveal>
+                        <div class="race-bar-label">Pardo (Mixed)</div>
+                        <div class="race-bar-track">
+                            <div class="race-bar-fill" style="width:45%"></div>
+                            <span class="race-bar-value">45%</span>
+                        </div>
+                    </div>
+                    <div class="race-bar" data-scroll-reveal>
+                        <div class="race-bar-label">White</div>
+                        <div class="race-bar-track">
+                            <div class="race-bar-fill" style="width:43%"></div>
+                            <span class="race-bar-value">43%</span>
+                        </div>
+                    </div>
+                    <div class="race-bar" data-scroll-reveal>
+                        <div class="race-bar-label">Black</div>
+                        <div class="race-bar-track">
+                            <div class="race-bar-fill" style="width:10%"></div>
+                            <span class="race-bar-value">10%</span>
+                        </div>
+                    </div>
+                    <div class="race-bar" data-scroll-reveal>
+                        <div class="race-bar-label">Indigenous</div>
+                        <div class="race-bar-track">
+                            <div class="race-bar-fill" style="width:0.6%"></div>
+                            <span class="race-bar-value">0.6%</span>
+                        </div>
+                    </div>
+                    <div class="race-bar" data-scroll-reveal>
+                        <div class="race-bar-label">East Asian</div>
+                        <div class="race-bar-track">
+                            <div class="race-bar-fill" style="width:0.4%"></div>
+                            <span class="race-bar-value">0.4%</span>
+                        </div>
+                    </div>
+                </div>
+            </blockquote>
+
+            <div class="race-note" data-scroll-reveal>
+                <p>
+                    In one Brazilian family, siblings might proudly identify as Black, White, and Pardo&mdash;all at once.
+                    Phenotype, not ancestry, drives how people check the box.
+                </p>
+            </div>
+
+            <div class="race-video" data-scroll-reveal>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/haw3ROMgP7g"
+                            title="Race in Brazil explainer"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">
+                    Watch: Why race in Brazil can't be reduced to simple categories.
+                </p>
+            </div>
+
+            <p class="dna-intro" data-scroll-reveal>
+                Brazil's centuries-long history as a multicultural society has left a striking genetic signature: the vast majority of Brazilians carry mixed ancestry in their DNA. The numbers tell a compelling story. White Brazilians average 7% African ancestry and 7% Amerindian DNA—dramatically higher than their U.S. counterparts, who average just 0.19% African and 0.18% Indigenous ancestry. The pattern holds in reverse as well: Pardo (mixed-race) and Black Brazilians carry 68% and 43% European ancestry respectively, compared to only 24% among Black Americans. These genetic patterns reveal how thoroughly Brazil's diverse populations have interwoven over generations.
+            </p>
+            <p class="dna-intro" data-scroll-reveal>
+                The average ancestry of the major racial groups in Brazil is as follows:
+            </p>
+            <div class="dna-breakdown">
+                <div class="dna-card" data-scroll-reveal>
+                    <h3>White Brazilians</h3>
+                    <ul>
+                        <li>86% European</li>
+                        <li>7% African</li>
+                        <li>7% Indigenous</li>
+                    </ul>
+                </div>
+                <div class="dna-card" data-scroll-reveal>
+                    <h3>Pardos</h3>
+                    <ul>
+                        <li>68% European</li>
+                        <li>24% African</li>
+                        <li>9% Indigenous</li>
+                    </ul>
+                </div>
+                <div class="dna-card" data-scroll-reveal>
+                    <h3>Black Brazilians</h3>
+                    <ul>
+                        <li>50% African</li>
+                        <li>43% European</li>
+                        <li>7% Indigenous</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="race-context" data-scroll-reveal>
+                <p>
+                    In Rio de Janeiro, 52% of White Brazilians report known non-European ancestry, compared to just
+                    0.7% African ancestry reported by White Americans. Brazil is a living blend, and identity keeps
+                    evolving with every generation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geography Snapshot -->
+    <section id="geography" class="section geography-summary">
+        <div class="section-content">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 2</span>
+                <h2 class="section-title">Geography: A Country of Countries</h2>
+                <p class="section-intro">
+                    Brazil is so vast and diverse that it behaves like five countries stitched together, whether you split it
+                    by interior versus coast, north versus south, or by racial and geographic lines.
+                </p>
+            </div>
+
+            <div class="geo-summary-grid">
+                <article class="geo-card" data-scroll-reveal>
+                    <div class="geo-text">
+                        <span class="step-kicker">Population Pulse</span>
+                        <h3>Coastal Concentration</h3>
+                        <p>
+                            More Brazilians live within 150 km of the Atlantic than in the entire rest of the country combined.
+                            Nearly 85% of the population stays within 500 km of the shoreline, leaving the vast interior comparatively empty.
+                        </p>
+                    </div>
+                    <div class="geo-image" aria-hidden="true">
+                        <img src="assets/images/geography/Coastal_Concentration.jpg" alt="Coastal concentration map">
+                    </div>
+                </article>
+
+                <article class="geo-card" data-scroll-reveal>
+                    <div class="geo-text">
+                        <span class="step-kicker">Demographic Bands</span>
+                        <h3>Racial Geography</h3>
+                        <p>
+                            Whiter populations cluster in the southern states thanks to European immigration. Mixed-race and Black
+                            Brazilians dominate much of the Northeast, Southeast, and Center-West, while Indigenous communities focus
+                            across the Amazon and interior West.
+                        </p>
+                        <p>
+                            Brazil’s racial geography mirrors its economic history: regions dominated by large-scale colonial plantation and slave economies (Northeast, Southeast coast) developed large Black and Mixed-race populations, while regions settled later by subsidized European agriculturalists (South) became primarily White, and the least developed, heavily forested interior regions (North/Amazon) retain the largest concentration of Indigenous populations and Native American genetic influence
+                        </p>
+                    </div>
+                    <div class="geo-image" aria-hidden="true">
+                        <img src="assets/images/geography/Racial_Geography.jpg" alt="Racial geography map">
+                    </div>
+                </article>
+
+                <article class="geo-card" data-scroll-reveal>
+                    <div class="geo-text">
+                        <span class="step-kicker">Five Nations</span>
+                        <h3>Brazil Regions</h3>
+                        <p>
+                            Picture Brazil as coastal megacities, Amazonian forest, cerrado savanna, temperate southern plains, and
+                            Andean-leaning west. No matter how you slice it, you reveal another Brazil.
+                        </p>
+                        <p>
+                            Brazil is officially divided into five major regions (macroregions) by the Brazilian Institute of Geography and Statistics (IBGE): North, Northeast, Central-West, Southeast, and South
+                        </p>
+                        <p>
+                            The five regions were divided according to physical, political, social, and economic similarities
+                        </p>
+                    </div>
+                    <div class="geo-image" aria-hidden="true">
+                        <img src="assets/images/geography/Brazil_Countries.png" alt="Five Brazils illustration">
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Breakdown (Main Scrollytelling) -->
+    <section id="regions" class="scrollytelling-section regions-section">
+        <!-- Section Introduction -->
+        <div class="scrolly-intro">
+            <h2 class="section-title">Brazil's Regional Tapestry</h2>
+            <p class="section-subtitle">
+                Each region has its own landscape, food, and people &mdash; making the country feel more
+                like a collection of small worlds stitched together.
+            </p>
+        </div>
+
+        <!-- Main Scrollytelling Container -->
+        <div class="scrolly-container">
+
+            <!-- Scrolling Steps Container -->
+            <div class="steps-wrapper">
+                <!-- Step 1: North (Amazon) -->
+                <div class="step" data-step="0" data-region="north">
+                    <div class="step-content">
+                        <span class="region-label">Region 1</span>
+                        <h2>North</h2>
+                        <p class="region-subtitle">Amazon Region</p>
+                        <p>
+                            <strong>States:</strong> Amazonas, Pará, Acre, Rondônia, Roraima, Amapá, Tocantins
+                        </p>
+                        <p>
+                            Brazil’s northernmost frontier hugs Venezuela, Guyana, Suriname, French Guiana, and the Atlantic,
+                            shelters the Amazon River itself, and covers half of Brazil’s territory while housing less than 5%
+                            of its population.
+                        </p>
+                        <p>
+                            Indigenous nations such as the Yanomami, Kayapó, and Tupi have shaped the forest for millennia.
+                            Today rubber, timber, mining, and jungle agriculture remain economic pillars.
+                        </p>
+                        <p>
+                            Manaus—a two-million-person metropolis at the Negro and Solimões rivers—anchors culture with dishes
+                            like maniçoba and the electrifying shrimp-and-jambu soup tacacá.
+                        </p>
+                        <p><strong>Focus:</strong> Tacacá captures the Amazon’s flavors in a single smoky bowl.</p>
+                    </div>
+                    <div class="step-image" data-region="north">
+                        <img src="assets/images/regions/North.png" alt="Northern Brazil Region" />
+                    </div>
+                </div>
+
+                <!-- Step 2: Northeast -->
+                <div class="step" data-step="1" data-region="northeast">
+                    <div class="step-content">
+                        <span class="region-label">Region 2</span>
+                        <h2>Northeast</h2>
+                        <p class="region-subtitle">The Cultural Heartland</p>
+                        <p>
+                            <strong>States:</strong> Bahia, Pernambuco, Ceará, Paraíba, Rio Grande do Norte, Alagoas, Sergipe, Piauí, Maranhão
+                        </p>
+                        <p>
+                            Portugal began colonizing Brazil along this coast. Salvador, Recife, and Fortaleza still showcase
+                            pastel forts, baroque churches, and endless beaches.
+                        </p>
+                        <p>
+                            Nearly 30% of Brazilians live here, blending African, Indigenous, and Portuguese heritage through
+                            dishes like acarajé and moqueca. Salvador is the largest African-descendant city outside Africa and
+                            the epicenter of Black Brazilian life.
+                        </p>
+                        <p>
+                            Capoeira—a martial art disguised as dance—emerged here and now holds UNESCO Intangible Cultural Heritage
+                            status.
+                        </p>
+                        <p><strong>Focus:</strong> Capoeira rodas energizing Salvador’s Pelourinho.</p>
+                    </div>
+                    <div class="step-image" data-region="northeast">
+                        <img src="assets/images/regions/Northeast.png" alt="Northeast Brazil Region" />
+                    </div>
+                </div>
+
+                <!-- Step 3: Central-West -->
+                <div class="step" data-step="2" data-region="centralwest">
+                    <div class="step-content">
+                        <span class="region-label">Region 3</span>
+                        <h2>Central-West</h2>
+                        <p class="region-subtitle">The Political Center</p>
+                        <p>
+                            <strong>States:</strong> Goiás, Mato Grosso, Mato Grosso do Sul, Federal District
+                        </p>
+                        <p>
+                            Wedged between Bolivia, Paraguay, and the rest of Brazil, this region holds Cuiabá, Campo Grande,
+                            Goiânia, and Brasília—the planned capital inaugurated in 1960.
+                        </p>
+                        <p>
+                            The Pantanal wetland and Cerrado savanna dominate the biome. Agribusiness, cattle ranching, and
+                            mining are king, accompanied by dishes like arroz com pequi and pamonha.
+                        </p>
+                        <p><strong>Focus:</strong> Sertanejo, the Brazilian country soundtrack born on these ranches.</p>
+                    </div>
+                    <div class="step-image" data-region="centralwest">
+                        <img src="assets/images/regions/Central-West.png" alt="Central-West Brazil Region" />
+                    </div>
+                </div>
+
+                <!-- Step 4: Southeast (Economic Center) -->
+                <div class="step" data-step="3" data-region="southeast">
+                    <div class="step-content">
+                        <span class="region-label">Region 4</span>
+                        <h2>Southeast</h2>
+                        <p class="region-subtitle">The Economic Powerhouse</p>
+                        <p>
+                            <strong>States:</strong> São Paulo, Rio de Janeiro, Minas Gerais, Espírito Santo
+                        </p>
+                        <p>
+                            Coffee fortunes, industrialization, and immigrant labor from Europe and Asia made this Brazil’s
+                            demographic and financial core.
+                        </p>
+                        <p>
+                            São Paulo drives finance and tech; Rio de Janeiro stages Carnival, samba, and MPB; Minas Gerais
+                            serves feijoada and pão de queijo amid colonial towns; Espírito Santo ties ports to global trade.
+                        </p>
+                        <p>
+                            Cultural staples span samba, bossa nova, and Festa Junina, reinforcing the region’s outsized influence.
+                        </p>
+                        <p><strong>Focus:</strong> São Paulo’s skyline—Latin America’s relentless megacity.</p>
+                    </div>
+                    <div class="step-image" data-region="southeast">
+                        <img src="assets/images/regions/Southeast.png" alt="Southeast Brazil Region" />
+                    </div>
+                </div>
+
+                <!-- Step 5: South (European Influence) -->
+                <div class="step" data-step="4" data-region="south">
+                    <div class="step-content">
+                        <span class="region-label">Region 5</span>
+                        <h2>South</h2>
+                        <p class="region-subtitle">European Immigration</p>
+                        <p>
+                            <strong>States:</strong> Rio Grande do Sul, Santa Catarina, Paraná
+                        </p>
+                        <p>
+                            Bordered by Argentina, Uruguay, and Paraguay, the South has Brazil’s highest percentage of European
+                            descendants thanks to German, Italian, and Slavic waves.
+                        </p>
+                        <p>
+                            Porto Alegre, Curitiba, and Florianópolis fuel industries from agribusiness to automotive, while
+                            landscapes swing from the Serra do Mar to Iguaçu Falls.
+                        </p>
+                        <p>
+                            Churrasco, barreado, chimarrão, gaucho rodeos, Festa da Uva, and Blumenau’s Oktoberfest define the
+                            calendar.
+                        </p>
+                        <p><strong>Focus:</strong> Oktoberfest in Blumenau—Bavaria reborn in Santa Catarina.</p>
+                    </div>
+                    <div class="step-image" data-region="south">
+                        <img src="assets/images/regions/South.png" alt="South Brazil Region" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Culture, Faith & Daily Life -->
+    <section id="legacy" class="section legacy-section">
+        <div class="section-content">
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 3</span>
+                <h2 class="section-title">Brazilian Realities</h2>
+                <p class="section-intro">
+                    Economy, faith, beauty, stories, and food collide to shape daily life across Brazil.
+                </p>
+            </div>
+
+            <div class="insights-grid" data-scroll-reveal>
+                <article class="insight-card" data-scroll-reveal>
+                    <h3>Economy</h3>
+                    <p>Brazil’s economy is diversified, balancing services, factories, farms, and mines.</p>
+                    <ul>
+                        <li><strong>Services:</strong> 67% of GDP and the largest employer.</li>
+                        <li><strong>Industry:</strong> Second-biggest manufacturing hub in the Americas building cars, petrochemicals, aircraft, and more.</li>
+                        <li><strong>Agriculture:</strong> World leader in soy and beef exports and the top coffee producer for 150+ years.</li>
+                        <li><strong>Resources:</strong> Iron ore and petroleum fuel the export ledger.</li>
+                    </ul>
+                </article>
+
+                <article class="insight-card" data-scroll-reveal>
+                    <h3>Religion</h3>
+                    <p>Faith in Brazil is fluid, syncretic, and always evolving.</p>
+                    <ul>
+                        <li>Holds the world’s largest Catholic population, yet Catholic affiliation slid from 98% in 1910 to ~51% in 2022.</li>
+                        <li>Evangelical and Pentecostal churches are booming and reshaping culture.</li>
+                        <li>Syncretic faiths like Candomblé and Umbanda blend Catholic saints with African and Indigenous spirits.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <article class="insight-card beauty-card" data-scroll-reveal>
+                <h3>The “Right to Beauty”</h3>
+                <p>
+                    “Beauty opens doors” is more than a saying. As the world’s second-largest plastic-surgery market, Brazil treats
+                    cosmetic procedures like essential healthcare. Inspired by surgeon Ivo Pitanguy’s credo—“the poor have a right to
+                    be beautiful too”—public hospitals perform free operations and clinics offer payment plans, while patients openly
+                    share their transformations.
+                </p>
+                <p>
+                    Yet colonial ideals still dictate who gets to feel beautiful. Eurocentric noses, lighter complexions, and
+                    straightened hair remain the aspirational template, so access to surgery alone can’t erase racial bias. In a nation
+                    marked by inequality, Brazilians keep asking who gets to define beauty in the first place.
+                </p>
+            </article>
+
+            <article class="insight-card telenovela-card" data-scroll-reveal>
+                <h3>Telenovelas</h3>
+                <p>
+                    Nightly novelas rival soccer as a national devotion. These limited-run dramas (three to twelve months) are usually
+                    set in Rio or São Paulo and knit together characters from Brazil’s upper, middle, and working classes.
+                </p>
+                <p>
+                    Beyond escapism, novelas debate social issues, portray the mixing of classes, and roam from melodrama and historical
+                    epics to political satire, magical realism, sci-fi, and fantasy. They have helped urbanize national culture and give
+                    viewers a forum for discussing change.
+                </p>
+            </article>
+            </div>
+
+            <div class="food-story" data-scroll-reveal>
+                <div class="food-image">
+                    <img src="assets/images/culture/food.jpg" alt="Brazilian food collage">
+                </div>
+                <div class="food-text">
+                    <p>
+                        Brazilian cuisine is a vibrant mosaic of flavors shaped over centuries by Portuguese colonizers, enslaved
+                        Africans, Indigenous peoples, and waves of later immigrants. Everyday staples like rice and beans mirror this
+                        blend: rice arrived via global trade, beans trace to African and even Chinese agricultural traditions. Together
+                        they symbolize comfort and food security for millions.
+                    </p>
+                    <p>
+                        Feijoada—the rich black-bean and pork stew served with rice and collards—is the best-known fusion dish, born
+                        in enslaved kitchens and now a national emblem. In Bahia, African heritage shines through palm-oil dishes like
+                        moqueca and street-side acarajé.
+                    </p>
+                    <p>
+                        Travel south and immigrant influences take over: German and Italian traditions fuel churrasco and hearty,
+                        meat-forward meals. Street snacks like pastel reveal surprising Chinese roots, while Indigenous knowledge
+                        survives in ingredients like guaraná, which leapt from Amazonian rituals to a beloved soda.
+                    </p>
+                    <p>
+                        From Norte to Sul, Brazilian food is a living record of cultural fusion, regional pride, and the complex history
+                        that forged the nation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cultural Quirks -->
+    <section id="culture" class="section quirks-section">
+        <div class="section-content">
+            <!-- Section Header -->
+            <div class="section-header" data-scroll-reveal>
+                <span class="section-label">Part 4</span>
+                <h2 class="section-title">Brazil's Goofy & Unexpected Side</h2>
+                <p class="section-intro">
+                    Beyond football and samba, Brazil has a delightfully quirky everyday culture.
+                </p>
+            </div>
+
+            <!-- Quirks Grid -->
+            <div class="quirks-grid" data-scroll-reveal>
+                <!-- Quirk 1: Capoeira -->
+                <div class="quirk-card" data-quirk="capoeira">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/capoeira.jpg" alt="Capoeira" />
+                    </div>
+                    <h3>Capoeira: Dance or Martial Art?</h3>
+                    <p>
+                        A mesmerizing blend of dance, acrobatics, and martial arts, created by enslaved Africans. Now a symbol of Brazilian culture worldwide.
+                    </p>
+                    <div class="quirk-stat">~5M practitioners globally</div>
+                </div>
+
+                <!-- Quirk 2: Feijoada -->
+                <div class="quirk-card" data-quirk="food">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/feijoada.jpg" alt="Feijoada" />
+                    </div>
+                    <h3>Feijoada: The Saturday Tradition</h3>
+                    <p>
+                        A hearty stew of beans, pork and beef. Traditionally eaten on Saturdays, it's Brazil's unofficial national dish.
+                    </p>
+                </div>
+
+                <!-- Quirk 3: Brazilian Portuguese -->
+                <div class="quirk-card" data-quirk="language">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/brazilian%20portuguese.jpg" alt="Brazilian Portuguese" />
+                    </div>
+                    <h3>Brazilian Portuguese vs. European</h3>
+                    <p>
+                        Though both speak Portuguese, Brazilian Portuguese has unique sounds, rhythms, and expressions that Europeans often don't understand.
+                    </p>
+                </div>
+
+                <!-- Quirk 4: Carnival -->
+                <div class="quirk-card" data-quirk="carnival">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/carnival.jpg" alt="Rio Carnival" />
+                    </div>
+                    <h3>Rio Carnival: Controlled Chaos</h3>
+                    <p>
+                        The largest carnival on Earth pulls over 2 million revelers into Rio’s streets for five days where the poor play royalty, the rich dress as pirates, and everyday rules vanish.
+                    </p>
+                    <div class="quirk-stat">Nationwide pause · 5+ days</div>
+                </div>
+
+                <!-- Quirk 5: Jeitinho -->
+                <div class="quirk-card" data-quirk="jeitinho">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/Jeithno.png" alt="Jeitinho Brasileiro" />
+                    </div>
+                    <h3>Jeitinho Brasileiro</h3>
+                    <p>
+                        Brazil’s “little way” means there’s always a creative workaround—cutting bureaucracy, going over a manager’s head, or even shaving a bit off your taxes if you can charm the clerk.
+                    </p>
+                    <div class="quirk-stat">Creative rule-bending</div>
+                </div>
+
+                <!-- Quirk 6: Beach Culture -->
+                <div class="quirk-card" data-quirk="beach">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/beach%20culture.jpg" alt="Beach Culture" />
+                    </div>
+                    <h3>Beach Life: Work, Play, Relax</h3>
+                    <p>
+                        On beaches, it's normal to play football, drink a coconut, and have lunch all in the sand. Beaches are Brazil's social clubs, with their own culture and rules.
+                    </p>
+                </div>
+
+                <!-- Quirk 7: Cookie War -->
+                <div class="quirk-card" data-quirk="cookie-war">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/bolacha%20vs%20biscoito.jpg" alt="Bolacha vs. Biscoito" />
+                    </div>
+                    <h3>The Eternal Cookie War</h3>
+                    <p>
+                        São Paulo swears the crunchy treat is “bolacha.” Rio insists it’s “biscoito.” The mock feud has raged for decades, with memes, ridicule, and mock “casualties.”
+                    </p>
+                </div>
+
+                <!-- Quirk 8: Holy Road Trip -->
+                <div class="quirk-card" data-quirk="aparecida">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/Aparecida.jpg" alt="Nossa Senhora Aparecida" />
+                    </div>
+                    <h3>Pilgrimage to Aparecida</h3>
+                    <p>
+                        Brazil’s patroness Nossa Senhora Aparecida draws 12 million pilgrims each year to her São Paulo–state shrine. October 12 is a national holiday in her honor.
+                    </p>
+                </div>
+
+                <!-- Quirk 9: Snow in the Tropics -->
+                <div class="quirk-card" data-quirk="snow">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/snow.jpg" alt="Snow in Southern Brazil" />
+                    </div>
+                    <h3>The Snowfall Region</h3>
+                    <p>
+                        Southern Brazil (think Curitiba, Florianópolis, Foz do Iguaçu) is temperate, cycles through all four seasons, and is the only region that occasionally gets snow.
+                    </p>
+                </div>
+
+                <!-- Quirk 10: Acre Exists -->
+                <div class="quirk-card" data-quirk="acre">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/acre.jpg" alt="Acre State" />
+                    </div>
+                    <h3>The State That Might Not Exist</h3>
+                    <p>
+                        Brazilians joke that Acre is imaginary—or still crawling with dinosaurs—because so few people have visited. Residents often reassure skeptics: “We promise we exist.”
+                    </p>
+                </div>
+
+                <!-- Quirk 11: Guaraná Eyes -->
+                <div class="quirk-card" data-quirk="guarana">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/guarana.jpg" alt="Guaraná Fruit" />
+                    </div>
+                    <h3>Guaraná’s Edible Eyes</h3>
+                    <p>
+                        The Amazon’s caffeine-rich guaraná fruit looks like watchful eyes when split open and has become a nationalist icon alongside soccer and samba.
+                    </p>
+                </div>
+
+                <!-- Quirk 12: Flip-Flop Superstition -->
+                <div class="quirk-card" data-quirk="flipflop">
+                    <div class="quirk-icon" aria-hidden="true">
+                        <img src="assets/images/cultural%20quirks/chinelos.jpg" alt="Brazilian Flip-Flops" />
+                    </div>
+                    <h3>Don't Flip the Flip-Flop</h3>
+                    <p>
+                        Leave a chinelo upside down and you’ll jinx your mom—so the legend says. Likely invented by mothers tired of dirty soles on clay floors, the superstition still sticks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section><!-- Government -->
+
+
+
+    <!-- Outro -->
+    <section id="outro" class="section outro-section">
+        <div class="section-content">
+            <div class="outro-copy">
+                <p>
+                    This is Brazil—a nation that emerged when continents split, that was built by people from every corner of Earth,
+                    that mixed them all together in ways no other nation has dared or managed to do.
+                </p>
+                <p>
+                    Brazil is massive. Brazil is vibrant. Brazil is colorful.
+                </p>
+                <p>
+                    Brazil is a living tapestry of humanity—threads from Africa, Europe, Asia, and the Indigenous Americas woven together
+                    so tightly that you can no longer separate them without destroying the whole cloth.
+                </p>
+                <p>
+                    And Brazil has many stories still waiting to be told.
+                </p>
+                <p>
+                    Did I miss something? Got a story to share?
+                </p>
+                <a class="outro-contact" href="mailto:hello@lyolaexplores.com">Write to me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; Lyola Explores the World</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollama@3.2.0/build/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/visualizations.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/scrollytelling.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
