@@ -175,7 +175,7 @@ const IntroductionSection = () => {
           <div ref={imageRef} className="lg:w-1/2 flex justify-center">
             <div className="w-full max-w-md h-96">
               <img
-                src="/images/4generations.jpg"
+                src="./images/4generations.jpg"
                 alt="Family Heritage"
                 className="w-full h-full object-cover rounded-xl border-4 border-family-primary shadow-lg"
               />
@@ -306,7 +306,7 @@ const BibisaraSection = () => {
           <div className="lg:w-1/2 flex justify-center">
             <div className="w-full max-w-md h-96">
               <img
-                src="/images/Nomads.jpg"
+                src="./images/Nomads.jpg"
                 alt="Nomad Survival"
                 className="w-full h-full object-contain rounded-xl border-4 border-family-primary shadow-lg"
               />
@@ -368,7 +368,7 @@ const BibisaraSection = () => {
           <div className="lg:w-1/2 flex justify-center">
             <div className="w-full max-w-md h-96">
               <img
-                src="/images/greatgrandparents.jpg"
+                src="./images/greatgrandparents.jpg"
                 alt="Great Grandparents Resilience"
                 className="w-full h-full object-cover rounded-xl border-4 border-family-primary shadow-lg"
               />
@@ -457,7 +457,7 @@ const ZhetybaiSection = () => {
           <div className="md:w-1/3 flex justify-center">
             <div className="w-full max-w-md h-96">
               <img
-                src="/images/deportations.png"
+                src="./images/deportations.png"
                 alt="Ethnic Deportations"
                 className="w-full h-full object-contain rounded-xl border-4 border-family-primary shadow-lg"
               />
@@ -615,7 +615,7 @@ const GrandmotherSection = () => {
             <div className="mt-6 flex justify-center">
               <div className="w-full max-w-md h-80">
                 <img
-                  src="/images/Aral_Sea.gif"
+                  src="./images/Aral_Sea.gif"
                   alt="Aral Sea"
                   className="w-full h-full object-contain rounded-xl border-4 border-aral-sea shadow-lg"
                 />
@@ -943,7 +943,7 @@ const JourneySection = () => {
 
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/images/avatar2.png"
+              src="./images/avatar2.png"
               alt="International Relations"
               className="w-full max-w-md h-96 object-contain rounded-xl border-4 border-family-primary shadow-lg"
             />
